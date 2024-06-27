@@ -4,7 +4,7 @@
 
 Este é um projeto de uma agenda online desenvolvido para fins de estudos, porém com uma implementação bem completa. O objetivo é fornecer uma plataforma robusta e eficiente para gerenciar clientes e agendamentos de tarefas. O desenvolvimento foi realizado utilizando principalmente PHP, Bootstrap e jQuery, com o gerenciamento do banco de dados feito pelo phpMyAdmin.
 
-![Logo]()
+![Logo](Tela_Agenda)
 
 ## Funcionalidades
 
