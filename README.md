@@ -73,7 +73,7 @@ Tela de Relatórios
 
 Tela de Gerenciamento de Usuários
 
-- Créditos
+## Créditos
 Este projeto foi desenvolvido com orientação do professor NerdSchoolTech - Prof. Marcos Melo. Agradecemos pela dedicação e pelo compartilhamento de conhecimento.
 
 
