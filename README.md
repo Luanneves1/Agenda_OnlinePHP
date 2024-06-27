@@ -4,8 +4,11 @@
 
 Este é um projeto de uma agenda online desenvolvido para fins de estudos, porém com uma implementação bem completa. O objetivo é fornecer uma plataforma robusta e eficiente para gerenciar clientes e agendamentos de tarefas. O desenvolvimento foi realizado utilizando principalmente PHP, Bootstrap e jQuery, com o gerenciamento do banco de dados feito pelo phpMyAdmin.
 
-##(Ainda está em desenvolvimento e não está finalizado  porém toda a parte de cadastro de Cliente, consulta SQL e validação foi implementada atualmente ainda estou trabalhando nele.)
+- (Ainda está em desenvolvimento e não está finalizado  porém toda a parte de cadastro de Cliente, consulta SQL e validação foi implementada atualmente ainda estou trabalhando nele.)
 
+## Tela de editar e cadastrar cliente
+ - ![logo](TelaEditarCliente.png)
+## Tela de consulta clientes cadastrados
 ![Logo](Tela_Agenda)
 
 ## Funcionalidades
