@@ -57,22 +57,6 @@ $db_pass = 'senha';
 6. Acesse o projeto no navegador:
    http://localhost:8000
 
-
-
-
-Capturas de Tela
-Tela de Cadastro de Cliente
-
-Tela de Consulta de Cliente
-
-Tela de Agendamento de Tarefas
-
-Tela do Calendário Interativo
-
-Tela de Relatórios
-
-Tela de Gerenciamento de Usuários
-
 ## Créditos
 Este projeto foi desenvolvido com orientação do professor NerdSchoolTech - Prof. Marcos Melo. Agradecemos pela dedicação e pelo compartilhamento de conhecimento.
 
