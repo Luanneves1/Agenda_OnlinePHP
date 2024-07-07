@@ -2,18 +2,25 @@
     <h3><i class="bi bi-list-task"></i> Tarefas</h3>
 </header>
 <?php
-// Variavel pesquisa
-$txt_pesquisa = (isset($_POST["txt_pesquisa"])) ? $_POST["txt_pesquisa"] : "";
+// Campo de PESQUISA 
+$txt_pesquisa = isset($_POST["txt_pesquisa"]) ? $_POST["txt_pesquisa"] : "";
 
-// Alterna o status para concluido ou não concluido
+// Verifica se os parâmetros GET foram recebidos corretamente
+$idTarefa = isset($_GET['idTarefa']) ? (int)$_GET['idTarefa'] : 0;
+$statusTarefa = isset($_GET['statusTarefa']) && $_GET['statusTarefa'] == '0' ? 1 : 0;
 
-$idTarefa = (isset($_GET['idTarefa'])) ? $_GET['idTarefa'] : "";
-$statusTarefa =  (isset($_GET['statusTarefa']) and $_GET['statusTarefa'] == '0') ? '1' : '0';
+// Atualiza o status da tarefa apenas se os parâmetros estiverem corretos
+if ($idTarefa > 0) {
+    // Utilização de consulta preparada para evitar SQL injection
+    $sql = "UPDATE tbtarefas SET statusTarefa = ? WHERE idTarefa = ?";
+    $stmt = mysqli_prepare($conexao, $sql);
+    mysqli_stmt_bind_param($stmt, "ii", $statusTarefa, $idTarefa);
+    $result = mysqli_stmt_execute($stmt);
 
-$sql = "UPDATE tbtarefas SET statusTarefa = {$statusTarefa} WHERE idTarefa = {$idTarefa}";
-$rs = mysqli_query($conexao, $sql);
-//------------------------
-
+    if (!$result) {
+        die("Erro ao executar a query de atualização: " . mysqli_error($conexao));
+    }
+}
 ?>
 
 <div class="col-5">
@@ -84,7 +91,7 @@ $rs = mysqli_query($conexao, $sql);
                 <tr>
 
                     <td>
-                        <a class="btn-btn-secondary btn-sm" href="index.php?menuop=tarefas&pagina=<?= $pagina ?>&idTarefa=<?= $dados['idTarefa'] ?>&statusTarefa=<?= $dados['statusTarefa'] ?>">
+                        <a class="btn-btn-secondary btn-sm" href="index.php?menuop=tarefas&pagina=<?=$pagina?>&idTarefa=<?=$dados['idTarefa']?>&statusTarefa=<?=$dados['statusTarefa']?>">
 
                             <?php
                             if ($dados['statusTarefa'] == 0) {
