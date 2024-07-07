@@ -1,12 +1,26 @@
 <header>
     <h3><i class="bi bi-list-task"></i> Tarefas</h3>
 </header>
+<?php
+// Variavel pesquisa
+$txt_pesquisa = (isset($_POST["txt_pesquisa"])) ? $_POST["txt_pesquisa"] : "";
+
+// Alterna o status para concluido ou não concluido
+
+$idTarefa = (isset($_GET['idTarefa'])) ? $_GET['idTarefa'] : "";
+$statusTarefa =  (isset($_GET['statusTarefa']) and $_GET['statusTarefa'] == '0') ? '1' : '0';
+
+$sql = "UPDATE tbtarefas SET statusTarefa = {$statusTarefa} WHERE idTarefa = {$idTarefa}";
+$rs = mysqli_query($conexao, $sql);
+//------------------------
+
+?>
 
 <div class="col-5">
     <form action="index.php?menuop=tarefas" method="post">
 
         <div class="input-group ">
-            <input class="form-control" type="text" name="txt_pesquisa">
+            <input class="form-control" type="text" name="txt_pesquisa" value="<?= $txt_pesquisa ?>">
             <button type="submit" class="btn btn-warning btn-sm"><i class="bi bi-search"></i> Pesquisar</button>
 
     </form>
@@ -22,13 +36,13 @@
     <table class="table table-light  table-hover table-bordered border-light">
         <thead>
             <tr class="table-dark">
-            <th>Status</th>
-            <th>Título</th>
-            <th>Descrição</th>
-            <th>Data da Conclusão</th>
-            <th>Hora da Conclusão</th>
-            <th>Editar</th>
-            <th>Excluir</th>
+                <th>Status</th>
+                <th>Título</th>
+                <th>Descrição</th>
+                <th>Data da Conclusão</th>
+                <th>Hora da Conclusão</th>
+                <th>Editar</th>
+                <th>Excluir</th>
 
             </tr>
         </thead>
@@ -43,8 +57,8 @@
 
             $inicio = ($quantidade * $pagina) - $quantidade;
 
-            $txt_pesquisa = (isset($_POST["txt_pesquisa"])) ? $_POST["txt_pesquisa"] : "";
-            
+
+
 
             $query = "SELECT
             idTarefa, 
@@ -70,16 +84,18 @@
                 <tr>
 
                     <td>
-                         <a class="btn-btn-secondary btn-sm" href="#">
-                            <?php 
-                            if ($dados['statusTarefa']==0) {
+                        <a class="btn-btn-secondary btn-sm" href="index.php?menuop=tarefas&pagina=<?= $pagina ?>&idTarefa=<?= $dados['idTarefa'] ?>&statusTarefa=<?= $dados['statusTarefa'] ?>">
+
+                            <?php
+                            if ($dados['statusTarefa'] == 0) {
                                 echo '<i class="bi bi-square "></i>';
-                            }else {
-                                echo '<i class="bi bi-check-square"></i>';}
+                            } else {
+                                echo '<i class="bi bi-check-square"></i>';
+                            }
                             ?>
 
-                            
-                         </a>
+
+                        </a>
                     </td>
                     <td class="text-nowrap"><?= $dados["tituloTarefa"] ?></td>
                     <td><?= $dados["descricaoTarefa"] ?></td>

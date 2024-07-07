@@ -2,11 +2,15 @@
     <h3><i class="bi bi-people"></i> Contatos</h3>
 </header>
 
+<?php
+//Variavel da pesquisa
+$txt_pesquisa = (isset($_POST["txt_pesquisa"])) ? $_POST["txt_pesquisa"] : ""; ?>
+
 <div class="col-5">
     <form action="index.php?menuop=contatos" method="post">
 
         <div class="input-group ">
-            <input class="form-control" type="text" name="txt_pesquisa">
+            <input class="form-control" type="text" name="txt_pesquisa" value="<?= $txt_pesquisa ?>">
             <button type="submit" class="btn btn-warning btn-sm"><i class="bi bi-search"></i> Pesquisar</button>
 
     </form>
@@ -44,7 +48,7 @@
 
             $inicio = ($quantidade * $pagina) - $quantidade;
 
-            $txt_pesquisa = (isset($_POST["txt_pesquisa"])) ? $_POST["txt_pesquisa"] : "";
+
 
             $query = "SELECT `idContato`, upper(nomeContato) AS nomeContato, lower(emailContato) as emailContato, `telefoneContato`, upper(enderecoContato) AS enderecoContato, 
         CASE 
