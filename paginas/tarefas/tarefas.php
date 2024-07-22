@@ -36,7 +36,7 @@ if ($idTarefa > 0) {
 </div>
 
 <div class="Novo-Contato">
-    <a class="btn btn-light btn-secondary mb-2" href="index.php?menuop=cad-Tarefa"><i class="bi bi-list-task"></i> Nova Tarefa</a>
+    <a class="btn btn-light btn-secondary mb-2" href="index.php?menuop=cad-tarefa"><i class="bi bi-list-task"></i> Nova Tarefa</a>
 </div>
 
 <div class="tabela ">

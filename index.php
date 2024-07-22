@@ -86,6 +86,15 @@ include("db/conexao.php");
                 case 'tarefas':
                     include("paginas/tarefas/tarefas.php");
                     break;
+
+                case 'cad-tarefa':
+                    include("paginas/tarefas/cad-tarefa.php");
+                    break;
+
+                    case 'inserir-tarefa':
+                        include("paginas/tarefas/inserir-tarefa.php");
+                        break;
+
                 case 'eventos':
                     include("paginas/eventos/eventos.php");
                     break;
