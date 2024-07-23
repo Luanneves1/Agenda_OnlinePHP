@@ -23,7 +23,7 @@ include("db/conexao.php");
 
 <body>
 
-    <header >
+    <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary mb-3">
 
             <div class="container">
@@ -38,14 +38,14 @@ include("db/conexao.php");
                         <li class="nav-item "><a class="nav-link" href="index.php?menuop=eventos">Eventos</a></li>
                     </ul>
 
-                    
+
                 </div>
 
             </div>
             <form class="d-flex container col-2" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Pesquisa" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Pesquisa</button>
-                    </form>
+                <input class="form-control me-2" type="search" placeholder="Pesquisa" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Pesquisa</button>
+            </form>
         </nav>
     </header>
 
@@ -91,10 +91,13 @@ include("db/conexao.php");
                     include("paginas/tarefas/cad-tarefa.php");
                     break;
 
-                    case 'inserir-tarefa':
-                        include("paginas/tarefas/inserir-tarefa.php");
-                        break;
+                case 'inserir-tarefa':
+                    include("paginas/tarefas/inserir-tarefa.php");
+                    break;
 
+                case 'excluirTarefa':
+                    include("paginas/tarefas/excluirTarefa.php");
+                    break;
                 case 'eventos':
                     include("paginas/eventos/eventos.php");
                     break;
@@ -123,8 +126,9 @@ include("db/conexao.php");
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script src="js/validation.js"></script>
-    
+
 
 
 </body>
+
 </html>
