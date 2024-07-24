@@ -23,6 +23,8 @@ dataNascimentoContato = '{$dataNascimentoContato}'
 WHERE idContato = '{$idContato}'
 ";
 
+
+
 $rs = mysqli_query($conexao,$sql) or die("Erro ao execultar a Consulta".mysqli_error($conexao));
 echo ("O registro foi Atualizado com sucesso! $rs");
 ?>

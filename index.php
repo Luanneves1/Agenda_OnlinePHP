@@ -98,6 +98,15 @@ include("db/conexao.php");
                 case 'excluirTarefa':
                     include("paginas/tarefas/excluirTarefa.php");
                     break;
+
+                case 'editarTarefa':
+                    include("paginas/tarefas/editarTarefa.php");
+                    break;
+
+                case 'atualizarTarefa':
+                    include("paginas/tarefas/atualizarTarefa.php");
+                    break;
+
                 case 'eventos':
                     include("paginas/eventos/eventos.php");
                     break;
