@@ -1,6 +1,6 @@
 <?php
 $idTarefa = $_GET["idTarefa"];
-$sql = "SELECT * FROM tbtarefas WHERE idTarefa={$idTarefa}";
+$sql = "SELECT * FROM tbtarefas WHERE idTarefa='$idTarefa'";
 $rs = mysqli_query($conexao, $sql) or die("Erro ao recuperar os dados do registro." . mysqli_error($conexao));
 $dados = mysqli_fetch_assoc($rs);
 ?>
@@ -10,6 +10,12 @@ $dados = mysqli_fetch_assoc($rs);
 </header>
 <div>
     <form class="needs-validation" action="index.php?menuop=atualizarTarefa" method="post" novalidate>
+
+        <div class="mb-3 col-1">
+            <label for="idTarefa" class="form-label">ID</label>
+            <input class="form-control" type="text" name="idTarefa" id="idTarefa" value="<?= $dados["idTarefa"] ?>" readonly>
+        </div>
+
         <div class="mb-3">
             <label for="tituloTarefa" class="form-label">Título</label>
             <input class="form-control" type="text" name="tituloTarefa" value="<?= htmlspecialchars($dados["tituloTarefa"]) ?>" id="tituloTarefa" required>
