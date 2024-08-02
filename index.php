@@ -111,6 +111,13 @@ include("db/conexao.php");
                     include("paginas/eventos/eventos.php");
                     break;
 
+                case 'cad-eventos':
+                    include("paginas/eventos/cad-eventos.php");
+                    break;
+
+                case 'inserir-evento':
+                    include("paginas/eventos/inserir-evento.php");
+                    break;
 
 
                 default:

@@ -34,7 +34,7 @@ if ($idEvento > 0) {
 </div>
 
 <div class="Novo-Contato">
-    <a class="btn btn-light btn-secondary mb-2" href="index.php?menuop=cad-evento"><i class="bi bi-list-task"></i> Novo Evento</a>
+    <a class="btn btn-light btn-secondary mb-2" href="index.php?menuop=cad-eventos"><i class="bi bi-list-task"></i> Novo Evento</a>
 </div>
 
 <div class="tabela">
