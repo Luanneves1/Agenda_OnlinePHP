@@ -98,8 +98,8 @@ if ($idEvento > 0) {
                     <td><?= $dados["horaInicioEvento"] ?></td>
                     <td><?= $dados["dataFimEvento"] ?></td>
                     <td><?= $dados["horaFimEvento"] ?></td>
-                    <td class='text-center'><a class='btn btn-warning' href="index.php?menuop=editarEvento&idEvento=<?= $dados["idEvento"] ?>"><i class="bi bi-pencil-square"></i></a></td>
-                    <td class='text-center'><a class='btn btn-danger' href="index.php?menuop=excluirEvento&idEvento=<?= $dados["idEvento"] ?>"><i class="bi bi-trash3"></i></a></td>
+                    <td class='text-center'><a class='btn btn-warning' href="index.php?menuop=editar-evento&idEvento=<?= $dados["idEvento"] ?>"><i class="bi bi-pencil-square"></i></a></td>
+                    <td class='text-center'><a class='btn btn-danger' href="index.php?menuop=excluir-evento&idEvento=<?= $dados["idEvento"] ?>"><i class="bi bi-trash3"></i></a></td>
                 </tr>
             <?php
             };

@@ -93,8 +93,9 @@ $dados = mysqli_fetch_assoc($rs);
         }
         ?>
         <div class="col-6 img-fluid">
-            <img id="foto-contato" width="300" class="rounded-circle mb-3" src="./paginas/contatos/fotos-contatos/<?= $nomeFoto ?>" alt="Foto Contato">
+            <img id="foto-contato"  class="rounded-circle mb-3" src="./paginas/contatos/fotos-contatos/<?= $nomeFoto ?>" alt="Foto Contato">
         </div>
+
 
         <div class="mb-3">
             <button class="btn btn-warning" id="btn-editar-foto"><i class="bi bi-camera2"> Editar Foto</i></button>

@@ -2,7 +2,7 @@
 set_time_limit(0);
 include_once('../../../db/conexao.php');
 
-$extensoes_validas = array(".jpg", ".png", ".bmp");
+$extensoes_validas = array(".jpg", ".png", ".bmp",".jpeg");
 $caminho_absoluto = "../fotos-contatos";
 $tamanho_bytes = 5000000;
 

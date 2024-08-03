@@ -119,7 +119,16 @@ include("db/conexao.php");
                     include("paginas/eventos/inserir-evento.php");
                     break;
 
+                case 'editar-evento':
+                    include("paginas/eventos/editar-evento.php");
+                    break;
+                case 'atualizarEvento':
+                    include("paginas/eventos/atualizarEvento.php");
+                    break;
 
+                    case 'excluir-evento':
+                        include("paginas/eventos/excluir-evento.php");
+                        break; 
                 default:
                     include("paginas/home/home.php");
                     break;
@@ -127,10 +136,10 @@ include("db/conexao.php");
             ?>
         </div>
     </main>
-    <footer class="container-fluid fixed-bottom bg-dark ">
-        <div class="text-center">Agenda Online 1.0
-
-        </div>
+    <footer>
+    <div class="footer container-fluid fixed-bottom ">
+        <p>&copy; 2024 Agenda Online. Todos os direitos reservados.</p>
+    </div>
     </footer>
 
 

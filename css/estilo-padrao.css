@@ -1,12 +1,81 @@
-body{
-background-color: rgb(161, 183, 206);
-color: rgb(255, 255, 255);
+/* Define altura total da página e remove margens padrão */
+body {
+    height: 100%;
+    margin: 0;
+    background-color: rgb(161, 183, 206);
+    color: rgb(255, 255, 255);
+    font-family: Arial, sans-serif;
 }
 
-.tabela{
-margin-top:10px;
+/* Estrutura a página com flexbox, orientada em coluna */
+body {
+    display: flex;
+    flex-direction: column;
 }
 
-.Novo-Contato{
-    margin-top:20px;
+/* Estilo para a tabela, com margem superior */
+.tabela {
+    margin-top: 10px;
+}
+
+/* Estilo para a seção de novo contato, com margem superior */
+.Novo-Contato {
+    margin-top: 20px;
+}
+
+/* Estilo para o jumbotron (seção de destaque) com fundo gradiente e texto centralizado */
+.jumbotron {
+    background: #5f2c82;
+    background: -webkit-linear-gradient(to right, #49a09d, #5f2c82);
+    background: linear-gradient(to right, #49a09d, #5f2c82);
+    color: white;
+    text-align: center;
+    padding: 100px 25px;
+    border-radius: 40px;
+}
+
+/* Estilo para a seção de recursos */
+.features {
+    margin: 50px 0;
+    flex: 1;
+}
+
+/* Estilo para cada item de recurso, com fundo colorido, bordas arredondadas e transição */
+.features .feature-item {
+    padding: 30px;
+    border-radius: 10px;
+    background-color: rgba(95, 44, 130, 0.8);
+    color: white;
+    transition: transform 0.3s;
+}
+
+/* Efeito de hover para ampliar o item de recurso */
+.features .feature-item:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo para o rodapé, fixado na parte inferior da página */
+.footer {
+    background-color: #5f2c82;
+    color: white;
+    padding: 25px 0;
+    text-align: center;
+    margin-top: auto;
+    width: 100%;
+}
+
+
+#foto-contato {
+    width: 300px; /* Defina a largura desejada */
+    height: 300px; /* Certifique-se de que a altura é igual à largura para manter o círculo */
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Para garantir que a imagem circule corretamente dentro da coluna */
+.col-6.img-fluid {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -43,7 +43,7 @@ $txt_pesquisa = (isset($_POST["txt_pesquisa"])) ? $_POST["txt_pesquisa"] : ""; ?
         <tbody>
             <?php
 //quantidade de linhas 
-            $quantidade = 10;
+            $quantidade = 9;
 
             $pagina = (isset($_GET['pagina'])) ? (int)$_GET['pagina'] : 1;
 
