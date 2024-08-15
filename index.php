@@ -1,5 +1,27 @@
 <?php
-include("db/conexao.php");
+include("./db/conexao.php");
+session_start();
+
+if (isset($_SESSION["loginUser"]) and isset($_SESSION["senhaUser"])) {
+    $loginUser = $_SESSION["loginUser"];
+    $senhaUser = $_SESSION["senhaUser"];
+    $nomeUser = $_SESSION["nomeUser"];
+
+    $sql = "SELECT * FROM tbusuarios WHERE loginUser = '{$loginUser}' and senhaUser = '{$senhaUser}'";
+    $rs = mysqli_query($conexao, $sql);
+    $dados = mysqli_fetch_assoc($rs);
+    $linha = mysqli_num_rows($rs);
+
+    if ($linha == 0) {
+        session_unset();
+        session_destroy();
+        header('Location: login.php');
+        exit();
+    }
+} else {
+    header('Location: login.php');
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -37,15 +59,22 @@ include("db/conexao.php");
                         <li class="nav-item "><a class="nav-link" href="index.php?menuop=tarefas">Tarefas</a></li>
                         <li class="nav-item "><a class="nav-link" href="index.php?menuop=eventos">Eventos</a></li>
                     </ul>
-
-
                 </div>
 
             </div>
-            <form class="d-flex container col-2" role="search">
-                <input class="form-control me-2" type="search" placeholder="Pesquisa" aria-label="Search">
+            <form class="d-flex container col-3" role="search">
+                <input class="form-control me-1" type="search" placeholder="Pesquisar" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Pesquisa</button>
+
+                <div class="navbar-nav w-100 justify-content-end">
+                <a href="logout.php" class="nav-link">
+                    <i class="bi bi-person"></i>
+                    <?= $nomeUser ?> Sair <i class="bi bi-box-arrow-right"></i>
+                </a>
+            </div>
             </form>
+            
+
         </nav>
     </header>
 
@@ -126,9 +155,9 @@ include("db/conexao.php");
                     include("paginas/eventos/atualizarEvento.php");
                     break;
 
-                    case 'excluir-evento':
-                        include("paginas/eventos/excluir-evento.php");
-                        break; 
+                case 'excluir-evento':
+                    include("paginas/eventos/excluir-evento.php");
+                    break;
                 default:
                     include("paginas/home/home.php");
                     break;
@@ -137,9 +166,9 @@ include("db/conexao.php");
         </div>
     </main>
     <footer>
-    <div class="footer container-fluid fixed-bottom ">
-        <p>&copy; 2024 Agenda Online. Todos os direitos reservados.</p>
-    </div>
+        <div class="footer container-fluid fixed-bottom ">
+            <p>&copy; 2024 Agenda Online. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
 
